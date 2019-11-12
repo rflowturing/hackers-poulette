@@ -6,7 +6,6 @@ include_once('functions.php');
 
 <?php
 // echo "<pre>";
-print_r($_POST);
 $first_name = $_POST["first_name"];
 $last_name = $_POST["last_name"];
 $gender = $_POST["gender"];
