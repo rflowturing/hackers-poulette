@@ -19,20 +19,21 @@ function sendmail($sub, $mb)
     // Instantiation and passing `true` enables exceptions
     $mail = new PHPMailer(true);
 
+
     try {
         //Server settings
         // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
-        $mail->isSMTP();                                            // Send using SMTP
+        $mail->isSMTP();                                         // Send using SMTP
         $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-        $mail->Username   = 'ismail.work.becode@gmail.com';                     // SMTP username
-        $mail->Password   = 'lalegende';                               // SMTP password
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
+        $mail->Username   = 'su.work.becode@gmail.com';                     // SMTP username
+        $mail->Password   = '13456AB';                               // SMTP password
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;        // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
         $mail->Port       = 587;                                    // TCP port to connect to
 
         //Recipients
         $mail->setFrom('dont-answer@gmail.com', 'admin');
-        $mail->addAddress('ismail.work.becode@gmail.com');     // Add a recipient
+        $mail->addAddress('su.work.becode@gmail.com');     // Add a recipient
         // $mail->addAddress('ellen@example.com');               // Name is optional
         // $mail->addReplyTo('info@example.com', 'Information');
         // $mail->addCC('cc@example.com');
@@ -49,9 +50,10 @@ function sendmail($sub, $mb)
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
         $mail->send();
-        echo 'Message has ';
+        echo "<div class = 'success'> Message has been successfully sent </div>";
+
     } catch (Exception $e) {
-        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        echo "<div class = 'fail'> Message could not be sent. Mailer Error: {$mail->ErrorInfo} </div>";
     }
 }
 
@@ -66,9 +68,9 @@ function sendmailuser($mai)
         $mail->isSMTP();                                            // Send using SMTP
         $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-        $mail->Username   = 'ismail.work.becode@gmail.com';                     // SMTP username
-        $mail->Password   = 'lalegende';                               // SMTP password
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
+        $mail->Username   = 'su.work.becode@gmail.com';                     // SMTP username
+        $mail->Password   = '123456AB';                               // SMTP password
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; ;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
         $mail->Port       = 587;                                    // TCP port to connect to
 
         //Recipients
@@ -84,13 +86,14 @@ function sendmailuser($mai)
 
         // Content
         $mail->isHTML(true);                                  // Set email format to HTML
-        $mail->Subject = 'Company X';
+        $mail->Subject = 'Automatic reply';
         $mail->Body    = "Your message has been successfully send. Thank you";
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
         $mail->send();
-        echo 'been sent';
+
+
     } catch (Exception $e) {
-        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        echo "";
     }
 }

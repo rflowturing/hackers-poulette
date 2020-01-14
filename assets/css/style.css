@@ -10,6 +10,11 @@ html {
   font-family: "bellotaregular";
   background-color: gray;
 }
+body{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+}
 
 image {
   width: 100%;
@@ -48,4 +53,22 @@ i {
 .error {
   font-style: italic;
   color: red;
+}
+
+.success{
+font-size: 1.3em;
+color: green;
+border: 1px solid black;
+align-self: center;
+padding: 0 5px 0 5px;
+background-color: white;
+}
+
+.fail{
+  font-size: 1.3em;
+  color: red;
+  border: 1px solid black;
+  align-self: center;
+  padding: 0 5px 0 5px;
+  background-color: white;
 }

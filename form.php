@@ -13,7 +13,12 @@ $email = $_POST['email'];
 $country = $_POST["country"];
 $subject = $_POST["subject"];
 $message = $_POST["message"];
-
+$messageBody =
+    'Firstname : ' . $first_name . '<br>' .
+    'Lastname : ' . $last_name . '<br>' .
+    'Gender : ' . $gender . '<br>' .
+    'Country : ' . $country . '<br>' .
+    'message : ' . $message;
 
 if (isset($_POST['submit'])) {
     if ($first_name == "") {
@@ -52,8 +57,9 @@ if (isset($_POST['submit'])) {
         && $error_email == ""
         && $error_message == ""
     ) {
-        sendmail($subject, $message);
+        sendmail($subject, $messageBody);
         sendmailuser($email);
     }
+
 }
 ?>
